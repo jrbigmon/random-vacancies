@@ -3,7 +3,7 @@ import { Apartment } from "../apartments/apartment";
 import { Vacancy } from "../vacancies/vacancy";
 import { IApartmentToVacancy } from './apartment-to-vacancy.interface';
 
-export class RandomVacancy {
+export class ApartmentToVacancy {
   private _id: string;
   private _vacancy: Vacancy;
   private _apartment: Apartment;
@@ -27,7 +27,7 @@ export class RandomVacancy {
   }
 
   public create({ apartment, vacancy, id }: IApartmentToVacancy) {
-    const randomVacancy = new RandomVacancy(vacancy, apartment, id);
+    const randomVacancy = new ApartmentToVacancy(vacancy, apartment, id);
 
     return randomVacancy;
   }
