@@ -1,7 +1,7 @@
 import { randomUUID } from "crypto";
 import { Apartment } from "../apartments/apartment";
 import { Vacancy } from "../vacancies/vacancy";
-import { IApartmentToVacancy } from './apartment-to-vacancy.interface';
+import { IApartmentToVacancy } from "./apartment-to-vacancy.interface";
 
 export class ApartmentToVacancy {
   private _id: string;
@@ -26,9 +26,13 @@ export class ApartmentToVacancy {
     return this._apartment;
   }
 
-  public create({ apartment, vacancy, id }: IApartmentToVacancy) {
+  static create({ apartment, vacancy, id }: IApartmentToVacancy) {
     const randomVacancy = new ApartmentToVacancy(vacancy, apartment, id);
 
     return randomVacancy;
+  }
+
+  public toString() {
+    return `Apartment: ${this.apartment.number} - Vacancy: ${this.vacancy.number}`;
   }
 }

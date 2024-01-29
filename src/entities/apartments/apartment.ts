@@ -32,7 +32,7 @@ export class Apartment {
     this._tower = value;
   }
 
-  public create({ number, tower }: IApartment): Apartment {
+  static create({ number, tower }: IApartment): Apartment {
     const apartment = new Apartment(number, tower);
 
     return apartment;

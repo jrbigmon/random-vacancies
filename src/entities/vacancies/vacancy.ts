@@ -22,7 +22,7 @@ export class Vacancy {
     this._number = value;
   }
 
-  public create({ number, id }: IVacancy): Vacancy {
+  static create({ number, id }: IVacancy): Vacancy {
     const vacancy = new Vacancy(number, id);
 
     return vacancy;
